@@ -1,0 +1,22 @@
+export const COLORS = {
+	white: ' #FFFFFF',
+	primary500: ' #070724',
+	primary300: ' #38384F',
+	primary200: ' #838391',
+	mercury: ' #419EBB',
+	venus: ' #EDA249',
+	earth: ' #6f2ed6',
+	mars: '#D14C32z',
+	jupiter: ' #D83A34',
+	saturn: ' #CD5120',
+	uranus: '#1ec2az4',
+	neptune: ' #2d68f0',
+	mercuryAccent: ' #DEF4FC',
+	venusAccent: ' #F7CC7F',
+	earthAccent: ' #545BFE',
+	marsAccent: ' #FF6A45',
+	jupiterAccent: ' #ECAD7A',
+	saturnAccent: ' #FCCB6B',
+	uranusAccent: ' #65F0D5',
+	neptuneAccent: ' #497EFA'
+};
