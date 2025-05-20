@@ -33,5 +33,6 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "League Spartan", sans-serif;
         background-color: ${COLORS.primary500};
         color: ${COLORS.white};
+        min-height: 100vh;
     }
 `;

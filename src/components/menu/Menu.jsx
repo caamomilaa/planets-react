@@ -1,83 +1,39 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { MENU_INFO } from '../../constants/menu-info';
 import {
-	StyledCircleEarth,
-	StyledCircleJupiter,
-	StyledCircleMars,
-	StyledCircleMercury,
-	StyledCircleNeptune,
-	StyledCircleSaturn,
-	StyledCircleUranus,
-	StyledCircleVenus,
-	StyledContainer,
-	StyledLi
+  StyledHamburguer,
+  StyledMenu,
+  StyledMenuItem,
+  StyledMenuLink
 } from './menu.styles';
 
 const Menu = () => {
-	return (
-		<nav>
-			<ul>
-				<StyledLi>
-					<Link to='/'>Home</Link>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleMercury />
-						<Link to='/mercury'>MERCURY</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleVenus />
-						<Link to='/venus'>VENUS</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleEarth />
-						<Link to='/earth'>EARTH</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleMars />
-						<Link to='/mars'>MARS</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleJupiter />
-						<Link to='/jupiter'>JUPITER</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleSaturn />
-						<Link to='/saturn'>SATURN</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleUranus />
-						<Link to='/uranus'>URANUS</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-				<StyledLi>
-					<StyledContainer>
-						<StyledCircleNeptune />
-						<Link to='/neptune'>NEPTUNE</Link>
-					</StyledContainer>
-					<img src='/planets-data/assets/icon-chevron.svg' alt='' />
-				</StyledLi>
-			</ul>
-		</nav>
-	);
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <StyledHamburguer
+        src='/planets-data/assets/icon-hamburger.svg'
+        alt=''
+        $isOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      />
+      <nav>
+        <StyledMenu $isOpen={isOpen}>
+          {MENU_INFO.map(menu => (
+            <StyledMenuItem key={menu.id} $color={menu.color}>
+              <StyledMenuLink
+                to={menu.link}
+                $color={menu.color}
+                onClick={() => setIsOpen(false)}
+              >
+                {menu.text}
+              </StyledMenuLink>
+              <img src='/planets-data/assets/icon-chevron.svg' alt='' />
+            </StyledMenuItem>
+          ))}
+        </StyledMenu>
+      </nav>
+    </>
+  );
 };
 export default Menu;
