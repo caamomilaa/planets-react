@@ -6,8 +6,8 @@ const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<Home name='Home' />} />
-      <Route path='/mercury' element={<Planets name='Mercury' />} />
-      <Route path='/venus' element={<Planets name='Venus' />} />
+      <Route path='/mercury' element={<Planets name='mercury' />} />
+      <Route path='/venus' element={<Planets name='venus' />} />
       <Route path='/earth' element={<Planets name='earth' />} />
       <Route path='/mars' element={<Planets name='mars' />} />
       <Route path='/jupiter' element={<Planets name='jupiter' />} />

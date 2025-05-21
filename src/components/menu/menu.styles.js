@@ -26,7 +26,6 @@ const StyledMenu = styled.ul`
 
 const StyledMenuItem = styled.li`
   display: flex;
-
   padding: 25px 37px 25px 64px;
   justify-content: space-between;
   align-items: center;
